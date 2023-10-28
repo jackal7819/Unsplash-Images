@@ -6,16 +6,18 @@ const AppContext = createContext();
 
 export const AppProvider = ({ children }) => {
 	const [isDarkTheme, setIsDarkTheme] = useState(false);
+	const [searchTerm, setSearchTerm] = useState('Nintendo');
 
 	const toggleDarkTheme = () => {
-        const newDarkTheme = !isDarkTheme;
+		const newDarkTheme = !isDarkTheme;
 		setIsDarkTheme(newDarkTheme);
-        const body = document.querySelector('body');
-        body.classList.toggle('dark-theme', newDarkTheme);
+		const body = document.querySelector('body');
+		body.classList.toggle('dark-theme', newDarkTheme);
 	};
 
 	return (
-		<AppContext.Provider value={{ isDarkTheme, toggleDarkTheme }}>
+		<AppContext.Provider
+			value={{ isDarkTheme, toggleDarkTheme, searchTerm, setSearchTerm }}>
 			{children}
 		</AppContext.Provider>
 	);

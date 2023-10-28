@@ -1,15 +1,18 @@
 import axios from 'axios';
 import { useQuery } from '@tanstack/react-query';
+import { useGlobalContext } from './Context';
 
 const URL = import.meta.env.VITE_API_URL;
 const KEY = import.meta.env.VITE_API_KEY;
 
 const Gallery = () => {
+	const { searchTerm } = useGlobalContext();
+	
 	const { data, isLoading, isError } = useQuery({
-		queryKey: ['images'],
+		queryKey: ['images', searchTerm],
 		queryFn: async () => {
 			const result = await axios.get(
-				`${URL}/search/photos?client_id=${KEY}&query=Nintendo`
+				`${URL}/search/photos?client_id=${KEY}&query=${searchTerm}`
 			);
 			return result.data;
 		},
