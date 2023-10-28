@@ -349,12 +349,16 @@ Search Form
 	transition: var(--darkModeTransition);
 	color: var(--textColor);
 	border-radius: 0;
+	border-top-left-radius: 0.2rem;
+	border-bottom-left-radius: 0.2rem;
 
 	/* border-right: none; */
 }
 
 .search-form .btn {
 	border-radius: 0;
+	border-top-right-radius: 0.2rem;
+	border-bottom-right-radius: 0.2rem;
 }
 .search-form .btn:hover {
 	background: var(--primary-300);
@@ -377,6 +381,7 @@ Gallery
 
 .image-container .img {
 	height: 10rem;
+	border-radius: 0.2rem;
 }
 
 @media (min-width: 768px) {
