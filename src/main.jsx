@@ -1,6 +1,12 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import App from './App';
 import './index.css';
 
-ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+import App from './App';
+import { AppProvider } from './Context';
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+
+ReactDOM.createRoot(document.getElementById('root')).render(
+	<AppProvider>
+		<App />
+	</AppProvider>
+);
