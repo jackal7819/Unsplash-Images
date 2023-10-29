@@ -12,7 +12,7 @@ const Gallery = () => {
 		queryKey: ['images', searchTerm],
 		queryFn: async () => {
 			const result = await axios.get(
-				`${URL}/search/photos?client_id=${KEY}&query=${searchTerm}`
+				`${URL}client_id=${KEY}&query=${searchTerm}`
 			);
 			return result.data;
 		},
